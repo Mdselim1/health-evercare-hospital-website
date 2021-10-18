@@ -9,4 +9,11 @@
 
     {"id":5,"key":"hazaboloro5","name":"Kiron Datta","time":"5 pm - 9 am","price":"600","title":"M.B.B.S , PHD ","institute":"Lebanone Medical","img":"https://i.pinimg.com/236x/18/a6/0d/18a60d81ab5617a76b7d9cecfecef4ba.jpg"},
     
-    {"id":6,"key":"hazaboloro6","name":"Simana Dutta","time":"8 pm - 9 am","price":"1000","title":"M.B.B.S ,BCS, PHD ","institute":"Beatiful Medical","img":"https://i.pinimg.com/236x/4c/55/c3/4c55c31c9173a7a36252feff9d597f94.jpg"}]
+    {"id":6,"key":"hazaboloro6","name":"Simana Dutta","time":"8 pm - 9 am","price":"1000","title":"M.B.B.S ,BCS, PHD ","institute":"Beatiful Medical","img":"https://i.pinimg.com/236x/4c/55/c3/4c55c31c9173a7a36252feff9d597f94.jpg"},
+
+    {"id":7,"key":"hazaboloro7","name":"Aburur Masud","time":"10 pm - 12 am","price":"1500","title":"M.B.B.S , PHD ","institute":"Lord Medical","img":"https://i.pinimg.com/236x/d0/75/7d/d0757db20f67bf64075c47c6b600d6ad.jpg"},
+
+    {"id":8,"key":"hazaboloro8","name":"Lena Hasam","time":"9 pm - 1 am","price":"300","title":"M.B.B.S ,BCS Health ","institute":"London Hospital","img":"https://i.pinimg.com/564x/a7/4a/cc/a74acc4bfdf146ef1d5b1d22caa1d6ba.jpg"},
+
+    {"id":9,"key":"hazaboloro9","name":"Ozar Terro","time":"5 pm - 9 am","price":"700","title":"M.B.B.S ,BCS, PHD ","institute":"Tamil University","img":"https://i.pinimg.com/564x/a5/a3/a0/a5a3a0b4408a7fa7b7d840e6bfbb3017.jpg"}
+]

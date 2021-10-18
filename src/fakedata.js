@@ -1,1 +1,62 @@
-[{"id":1,"key":"hazaboloro1","name":"Md Bajitulla","time":"10 am - 4 pm","price":"500","title":"M.B.B.S,BCS,Health","institute":"Dhaka Medical","img":"https://i.pinimg.com/564x/ce/63/47/ce63475562f960ede351c2533415adc5.jpg"},{"id":2,"key":"hazaboloro2","name":"Lira Ham","time":"8 am - 1 pm","price":"200","title":"M.B.B.S , Phd Drama","institute":"London Medical","img":"https://i.pinimg.com/564x/1b/52/fd/1b52fd81c2282b432b85dc6a8a01f13d.jpg"},{"id":3,"key":"hazaboloro3","name":"Ashed Barla","time":"8 am - 10 pm","price":"400","title":"M.B.B.S,Phd Dc.","institute":"Lal Mati Medical","img":"https://i.pinimg.com/564x/8c/82/ed/8c82eda9a19971539110111fe0352abf.jpg"},{"id":4,"key":"hazaboloro4","name":"Ching Gina","time":"12 am - 5 pm","price":"700","title":"M.B.B.S, Arthopedics","institute":"Shabana Medical","img":"https://i.pinimg.com/564x/89/19/ed/8919edf6a3070be5a39e93a33f81c112.jpg"},{"id":5,"key":"hazaboloro5","name":"Kiron Datta","time":"5 pm - 9 am","price":"600","title":"M.B.B.S , PHD ","institute":"Lebanone Medical","img":"https://i.pinimg.com/236x/18/a6/0d/18a60d81ab5617a76b7d9cecfecef4ba.jpg"},{"id":6,"key":"hazaboloro6","name":"Simana Dutta","time":"8 pm - 9 am","price":"1000","title":"M.B.B.S ,BCS, PHD ","institute":"Beatiful Medical","img":"https://i.pinimg.com/236x/4c/55/c3/4c55c31c9173a7a36252feff9d597f94.jpg"}]
+const service = [
+    {
+        id: 1,
+        key:'kasakisa1',
+        img: 'https://i.pinimg.com/564x/ef/32/dd/ef32dd9d24309569de2c778084cfdea3.jpg',
+        title:'Baby Fit Test'
+    },
+    {
+        id: 2,
+        key:'kasakisa2',
+        img: 'https://i.pinimg.com/564x/db/23/56/db23566777b35c269e72450b07cadafe.jpg',
+        title:'Teeth Test'
+    },
+    {
+        id: 3,
+        key:'kasakisa3',
+        img: 'https://i.pinimg.com/564x/0d/3c/8e/0d3c8e20ddb18130f18c51e0337c760e.jpg',
+        title:'Blood Test'
+    },
+    {
+        id: 4,
+        key:'kasakisa4',
+        img: 'https://i.pinimg.com/564x/fc/5a/24/fc5a24ee4525273e11ed77802b34f5de.jpg',
+        title:'Cardiology Test'
+    },
+    {
+        id: 5,
+        key:'kasakisa5',
+        img: 'https://i.pinimg.com/236x/e0/6d/d4/e06dd447fa4814cc01feeb5a9992c1fd.jpg',
+        title:'Liver Test'
+    },
+    {
+        id: 6,
+        key:'kasakisa6',
+        img: 'https://i.pinimg.com/236x/e5/ad/b2/e5adb215407859f08e70d2a5b452e9f0.jpg',
+        title:'Blood Suger Test'
+    },
+    {
+        id: 7,
+        key:'kasakisa7',
+        img: 'https://i.pinimg.com/564x/85/a7/35/85a73570dd23cb6b7279d74bcf846cd3.jpg',
+        title:'Dog Bite Test'
+    },
+    {
+        id: 8,
+        key:'kasakisa8',
+        img: 'https://i.pinimg.com/564x/a2/0b/05/a20b05458fdc16266199475ac29b178e.jpg',
+        title:'Full X-ray'
+    },
+    {
+        id: 9,
+        key:'kasakisa9',
+        img: 'https://i.pinimg.com/564x/69/ce/df/69cedf1c6834ce2f85cc84b73b936335.jpg',
+        title:'PG Test'
+    },
+    {
+        id: 10,
+        key:'kasakisa10',
+        img: 'https://i.pinimg.com/564x/1c/04/e2/1c04e27f88b8191b3849c4bb6065074a.jpg',
+        title:'Altasnow Gram'
+    },
+]

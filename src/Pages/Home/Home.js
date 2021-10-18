@@ -1,18 +1,55 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useDoctors from '../../Hooks/UseDoctors/useDoctors';
+import useService from '../../Hooks/UseService/useService';
+import HomeDoctors from '../HomeDoctors/HomeDoctors';
+import HomeService from '../HomeService/HomeService';
 import './Home.css';
 
 
 const Home = () => {
+
+    const { services } = useService();
+    const { doctors} = useDoctors();
+
+    const shortService = services.slice(0,3)
+    const shortDoctors = doctors.slice(0,3)
+
     return (
-        <div className="banner">
+        <div>
+            <div className="banner">
             <Container>
             <div className="banner-content">
                 <h1>Welcome to Our Hospital</h1>
                     <p className="w-50">How can we help you ? What's your problem describe now or set an appoint to our experiance doctor</p>
-                    <Link className="appo-btn">Set An Appoinment</Link>
+                    <Link to="/doctors" className="appo-btn">See Our Doctors</Link>
+                </div>
+            </Container>
             </div>
+            <Container>
+                <div>
+                    <h1 className="text-center py-4 fw-bolder fs-2">Our Services</h1>
+                    <div className="doctor-container">
+                        {
+                            shortService.map(short=><HomeService key={short.key} short={short}></HomeService>)
+                        }
+                    </div>
+                    <div className="text-center py-4">
+                    <Link className="appo-btn" to="/services">See More Services</Link>
+                    </div>
+                </div>
+                <div>
+                    <h1 className="text-center py-4 fw-bolder fs-2">Our Doctors</h1>
+                    <div className="doctor-container">
+                        {
+                            shortDoctors.map(doctor=><HomeDoctors key={doctor.key} doctor={doctor}></HomeDoctors>)
+                        }
+                    </div>
+                    <div className="text-center py-4">
+                    <Link className="appo-btn" to="/doctors">See More Doctors</Link>
+                    </div>
+                </div>
             </Container>
         </div>
     );

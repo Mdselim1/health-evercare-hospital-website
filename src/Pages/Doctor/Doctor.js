@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Doctor.css';
 
 const Doctor = (props) => {
-    const { name, img,title,time,price,institute } = props.doctor;
+    const {id, name, img,title,time,price,institute } = props.doctor;
 
     return (
         <div className="p-2 single-doctor">
@@ -14,7 +14,7 @@ const Doctor = (props) => {
             <h3 style={{color:"#30336b",fontWeight:'600'}}>Institute : {institute}</h3>
             <h3 style={{color:"#30336b",fontWeight:'600'}}>Visit Time : {time}</h3>
                 <h3 style={{ color: "#30336b", fontWeight: '600' }}>Visit Fee : {price} $</h3>
-                <Link to="/appointment" className="appo-btn">Set Appointment</Link>
+                <Link to={`/appointment/${id}`} className="appo-btn">Set Appointment</Link>
             </div>
         </div>
     );

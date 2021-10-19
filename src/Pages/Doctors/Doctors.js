@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import useDoctors from '../../Hooks/UseDoctors/useDoctors';
+import useData from '../../Hooks/useData';
 import Doctor from '../Doctor/Doctor';
 import './Doctors.css';
 
 const Doctors = () => {
 
-    const { doctors} = useDoctors();
+    const { doctors} = useData();
 
     return (
         <div className="my-5">

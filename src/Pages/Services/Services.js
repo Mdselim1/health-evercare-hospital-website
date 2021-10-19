@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import useService from '../../Hooks/UseService/useService';
+import useData from '../../Hooks/useData';
 import Service from '../Service/Service';
 
 const Services = () => {
 
-    const { services} = useService();
+    const { services} = useData();
 
     return (
         <div className="my-5">

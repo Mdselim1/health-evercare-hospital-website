@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomeService = (props) => {
-    const { img, title } = props.short;
+    const { img, title,id } = props.short;
     return (
         <div>
             <div className="p-2 single-doctor">
@@ -10,7 +10,7 @@ const HomeService = (props) => {
             <div className="p-4">
             <h3 style={{color:"#30336b",fontWeight:'600'}}>Service : {title}</h3>
             
-                <Link to="/appointment" className="appo-btn">See Details</Link>
+                <Link to={`/services/${id}`} className="appo-btn">See Details</Link>
             </div>
         </div>
         </div>

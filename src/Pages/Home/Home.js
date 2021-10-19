@@ -1,8 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useDoctors from '../../Hooks/UseDoctors/useDoctors';
-import useService from '../../Hooks/UseService/useService';
+import useData from '../../Hooks/useData';
 import HomeDoctors from '../HomeDoctors/HomeDoctors';
 import HomeService from '../HomeService/HomeService';
 import './Home.css';
@@ -10,11 +9,11 @@ import './Home.css';
 
 const Home = () => {
 
-    const { services } = useService();
-    const { doctors} = useDoctors();
+    const { services ,doctors} = useData();
+  
 
-    const shortService = services.slice(0,3)
-    const shortDoctors = doctors.slice(0,3)
+    const shortService = services.slice(0, 3);
+    const shortDoctors = doctors.slice(0, 3);
 
     return (
         <div>

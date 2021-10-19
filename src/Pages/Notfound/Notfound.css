@@ -1,0 +1,30 @@
+.not-found-page{
+    width:350px;
+    height: 350px;
+    margin: 55px auto;
+    background:orangered;
+    border-radius: 50%;
+    position: relative;
+}
+.not-found{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.not-found h1{
+    font-size: 9rem;
+    font-weight: 700;
+    color: #eee8aa;
+}
+
+.not-found h1 span{
+    font-size: 5rem;
+    color: black;
+}
+.not-found h3{
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+}

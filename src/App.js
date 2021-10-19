@@ -2,16 +2,22 @@ import { BrowserRouter , Switch,Route} from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AuthProvider from './context/AuthProvider';
+import Appointment from './Pages/Appointment/Appointment';
 import Contact from './Pages/Contact/Contact';
 import Doctors from './Pages/Doctors/Doctors';
 import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login';
 import Notfound from './Pages/Notfound/Notfound';
+import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Services from './Pages/Services/Services';
 
 function App() {
   return (
-    
-    <BrowserRouter>
+ 
+    <AuthProvider>
+      <BrowserRouter>
        <Header></Header>
       <Switch>
         <Route exact path="/">
@@ -20,14 +26,23 @@ function App() {
         <Route path="/home">
             <Home></Home>
           </Route>
-        <Route path="/doctors">
+        <PrivateRoute path="/doctors">
             <Doctors></Doctors>
-          </Route>
-        <Route path="/services">
+          </PrivateRoute>
+        <PrivateRoute path="/services">
             <Services></Services>
+        </PrivateRoute>
+        <Route path="/services/:servicesId">
+        <ServiceDetails></ServiceDetails>
         </Route>
+        <PrivateRoute path="/appointment/:appId">
+          <Appointment></Appointment>
+        </PrivateRoute>
         <Route path="/contact">
           <Contact></Contact>
+        </Route>
+        <Route path="/login">
+          <Login></Login>
         </Route>
         <Route path="*">
             <Notfound></Notfound>
@@ -35,6 +50,8 @@ function App() {
       </Switch>
       <Footer></Footer>
     </BrowserRouter>
+      </AuthProvider>
+   
   );
 }
 

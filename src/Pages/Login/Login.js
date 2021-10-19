@@ -20,6 +20,7 @@ const Login = () => {
 
     const location = useLocation();
     const history = useHistory();
+   
     const redirect_url = location.state?.from || '/';
 
     const handlegoogleLogIn = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Service = (props) => {
-    const {title,img,id} = props.short
+    const { title, img, id } = props.short;
     return (
         
             <div className="p-2 single-doctor">

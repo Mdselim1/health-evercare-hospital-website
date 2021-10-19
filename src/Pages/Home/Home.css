@@ -29,6 +29,8 @@
 }
 .banner-content p{
     font-size: 2rem;
+    font-weight: 500;
+    width: 50%;
 }
 
 .appo-btn{
@@ -45,4 +47,10 @@
 .appo-btn:hover{
     background:linear-gradient(#009432,#A3CB38 );
     color: #ffaa50;
+}
+
+@media(max-width:600px){
+    .banner-content p{
+        width: 80%;
+    }
 }

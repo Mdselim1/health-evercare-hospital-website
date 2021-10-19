@@ -10,7 +10,7 @@ const HomeService = (props) => {
             <div className="p-4">
             <h3 style={{color:"#30336b",fontWeight:'600'}}>Service : {title}</h3>
             
-                <Link to={`/services/${id}`} className="appo-btn">See Details</Link>
+                <Link to={`/service/${id}`} className="appo-btn">See Details</Link>
             </div>
         </div>
         </div>

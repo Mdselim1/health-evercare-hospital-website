@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useData from '../../Hooks/useData';
+import useAuth from '../../context/useAuth';
 import HomeDoctors from '../HomeDoctors/HomeDoctors';
 import HomeService from '../HomeService/HomeService';
 import './Home.css';
@@ -9,8 +9,7 @@ import './Home.css';
 
 const Home = () => {
 
-    const { services ,doctors} = useData();
-  
+    const { services ,doctors} = useAuth();
 
     const shortService = services.slice(0, 3);
     const shortDoctors = doctors.slice(0, 3);
@@ -21,7 +20,7 @@ const Home = () => {
             <Container>
             <div className="banner-content">
                 <h1>Welcome to Our Hospital</h1>
-                    <p className="w-50">How can we help you ? What's your problem describe now or set an appoint to our experiance doctor</p>
+                    <p className="banner-para">How can we help you ? What's your problem describe now or set an appoint to our experiance doctor</p>
                     <Link to="/doctors" className="appo-btn">See Our Doctors</Link>
                 </div>
             </Container>

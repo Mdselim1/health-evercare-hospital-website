@@ -12,12 +12,33 @@ const Firebase = () => {
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
     const [errorvalue, setErrorValue] = useState('');
-    const [name , setName] = useState('')
+    const [name, setName] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+    const [services, setServices] = useState([]);
+    const [doctors, setDoctors] = useState([]);
 
     const auth = getAuth();
     
     const googleProvider = new GoogleAuthProvider();
     const githubeProvider = new GithubAuthProvider();
+
+    // For Doctors Data Load 
+    useEffect(() => {
+        fetch('./doctors.json')
+            .then(res => res.json())
+            .then(doc => setDoctors(doc))
+            
+    },[])
+        
+    // For Service Data Load 
+    useEffect(() => {
+        fetch('./services.json')
+            .then(res => res.json())
+            .then(service => setServices(service))
+       
+    }, []);
+
+
 
     // Email INput Value Find Function 
     const handleFindEmailInputValue = (e) => {
@@ -81,33 +102,32 @@ const Firebase = () => {
     // Google Sign In Method 
 
     const handleGoogleSignIn = () => {
+        setIsLoading(true)
        return signInWithPopup(auth, googleProvider)
             
             .catch(error => {
                 setErrorValue(error.messege);
-            })
+            }).finally(()=>setIsLoading(false))
     };
 
     //Githube Sign In method 
 
     const handleGithubeSignIn = () => {
-        signInWithPopup(auth, githubeProvider)
-            .then(result => {
-            setUser(result.user);
-            })
+        setIsLoading(true)
+       return signInWithPopup(auth, githubeProvider)
             .catch(error => {
             setErrorValue(error.messege);
-        })
+        }).finally(()=>setIsLoading(false))
     }
 
     //Log Out User
 
     const handleLogOut = () => {
         signOut(auth).then(() => {
-            setUser({});
-        }).catch(error => {
-            setErrorValue(error.messege)
-        })
+            
+        }).finally(() => 
+            setIsLoading(false)
+        )
     };
 
     // UserName Value Find 
@@ -128,11 +148,16 @@ const Firebase = () => {
 
 
     useEffect(() => {
-        onAuthStateChanged(auth,user=>{
+        const unsubscribed = onAuthStateChanged(auth, user => {
             if (user) {
                 setUser(user);
-        }
+            }
+            else {
+                setUser({})
+            }
+            setIsLoading(false)
         })
+        return ()=> unsubscribed;
     },[])
 
     return {
@@ -143,12 +168,14 @@ const Firebase = () => {
         handleGithubeSignIn,
         handleFormSubmit,
         handleLogOut,
-        handleUserNameInputValueFind,
+        handleUserNameInputValueFind,setUser,
         checkValue,
         emailValue,
         passwordValue,
         errorvalue,
-        user
+        user,
+        isLoading,
+        services,doctors
     }
    
 };

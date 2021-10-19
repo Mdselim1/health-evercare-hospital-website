@@ -1,15 +1,29 @@
 import React from 'react';
-import useData from '../../Hooks/useData';
+import { Container } from 'react-bootstrap';
+import { useParams } from 'react-router';
+import useAuth from '../../context/useAuth';
+import './ServiceDetails.css';
+
 
 const ServiceDetails = () => {
 
-    const { services } = useData();
-    console.log(services);
+    const {serviceId} = useParams();
+
+    const {services } = useAuth();
+    
+    const item = services.find(ser => ser.id == serviceId);
+    
+    const { img, title, data } = item;
+
 
     return (
-        <div>
-            <h1>This is service Details</h1>
+        <Container>
+            <div className="mx-auto py-5 px-3 service-details">
+            <img src={img} className="w-100 rounded-2" alt="" />
+            <h1 className="fs-1 fw-bold text-success my-3">{title}</h1>
+            <p className="fs-4 fw-bold text-primary">{data}</p>
         </div>
+        </Container>
     );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import useData from '../../Hooks/useData';
+import useAuth from '../../context/useAuth';
 import Service from '../Service/Service';
 
 const Services = () => {
 
-    const { services} = useData();
+    const { services} = useAuth();
 
     return (
         <div className="my-5">

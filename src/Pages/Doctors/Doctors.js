@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import useData from '../../Hooks/useData';
+import useAuth from '../../context/useAuth';
 import Doctor from '../Doctor/Doctor';
 import './Doctors.css';
 
 const Doctors = () => {
 
-    const { doctors} = useData();
+    const { doctors} = useAuth();
 
     return (
         <div className="my-5">

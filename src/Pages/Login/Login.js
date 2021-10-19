@@ -14,7 +14,7 @@ const Login = () => {
         handleGithubeSignIn,
         handleFormSubmit,
         checkValue,
-        errorvalue,
+        errorvalue,setUser,
         handleUserNameInputValueFind,
     } = useAuth();
 
@@ -25,10 +25,18 @@ const Login = () => {
 
     const handlegoogleLogIn = () => {
         handleGoogleSignIn()
-        .then(result => {
+            .then(result => {
+                setUser(result.user)
+                history.push(redirect_url);
+            })
+    };
+    const handleGithubLogIn = () => {
+        handleGithubeSignIn()
+            .then(result => {
+           
             history.push(redirect_url);
         })
-    }
+    };
 
     return (
         <div className="login-form my-5 p-3">
@@ -63,7 +71,7 @@ const Login = () => {
                 <button onClick={handlegoogleLogIn} className="appo-btn w-100 border-0">{
                     checkValue ? 'Register With' : 'Sign in With'
                 } Google</button>
-                <button onClick={handleGithubeSignIn} className="appo-btn w-100 border-0">{
+                <button onClick={handleGithubLogIn} className="appo-btn w-100 border-0">{
                     checkValue ? 'Register With' : 'Sign in With'
                 } Githube</button>
             </div>

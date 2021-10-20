@@ -14,7 +14,7 @@ const Login = () => {
         handleGithubeSignIn,
         handleFormSubmit,
         checkValue,
-        errorvalue,setUser,
+        errorvalue,
         handleUserNameInputValueFind,
     } = useAuth();
 
@@ -24,6 +24,7 @@ const Login = () => {
    
     const redirect_url = location.state?.from || '/';
 
+    // Google Log In Redirect Uri
     const handlegoogleLogIn = () => {
         handleGoogleSignIn()
             .then(result => {
@@ -31,6 +32,8 @@ const Login = () => {
                 history.push(redirect_url);
             })
     };
+
+    // Githube Log In Redirect Uri 
     const handleGithubLogIn = () => {
         handleGithubeSignIn()
             .then(result => {

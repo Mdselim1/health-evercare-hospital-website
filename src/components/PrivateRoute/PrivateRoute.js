@@ -10,7 +10,7 @@ const PrivateRoute = (props) => {
     const { user, isLoading } = useAuth();
     
     if (isLoading) {
-        return <Spinner animation="border" variant="warning" />;
+        return <div className="text-center"><Spinner animation="border" variant="warning" /></div> ;
     }
 
     return (

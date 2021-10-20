@@ -3,6 +3,7 @@ import { GoogleAuthProvider,GithubAuthProvider ,createUserWithEmailAndPassword, 
     from "firebase/auth";
 import initializeAuthentication from '../../Firebase/FirebaseAuth/Firebase.initial';
 
+
 initializeAuthentication();
 
 const Firebase = () => {
@@ -26,13 +27,16 @@ const Firebase = () => {
     useEffect(() => {
         fetch('doctors.json')
             .then(res => res.json())
-            .then(doc => setDoctors(doc))
+            .then(doc => {
+                setDoctors(doc)
+                setIsLoading(false)
+            })
             .catch(error => {
                 console.log(error.messege);
-            })
-            
+            });    
     },[])
         
+ 
     // For Service Data Load 
     useEffect(() => {
        

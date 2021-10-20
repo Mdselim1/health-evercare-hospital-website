@@ -7,16 +7,19 @@ import './ServiceDetails.css';
 
 const ServiceDetails = () => {
 
+    
+    
     const { serviceId } = useParams();
     
-    const {services } = useAuth();
-
-   
+    const { services } = useAuth();
     
-    const item = services.find(ser => ser.id == serviceId);
-    
-    const { img, title, data } = item;
+    let service = services.find(ser => {
 
+        return ser.id == serviceId;
+    });
+
+
+    const { img, title, data } = service;
 
     return (
         <Container>

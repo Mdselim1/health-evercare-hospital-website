@@ -7,9 +7,11 @@ import './ServiceDetails.css';
 
 const ServiceDetails = () => {
 
-    const {serviceId} = useParams();
-
+    const { serviceId } = useParams();
+    
     const {services } = useAuth();
+
+   
     
     const item = services.find(ser => ser.id == serviceId);
     

@@ -86,17 +86,17 @@ const Firebase = () => {
 
     // Create A new User People 
 
-    const createAnewUser = (emailValue , passwordValue) => {
+    const createAnewUser = (emailValue, passwordValue) => {
+        setIsLoading(true)
         createUserWithEmailAndPassword(auth, emailValue, passwordValue)
       .then(result => {
-        const user = result.user;
-        console.log(user);
+          setUser(result.user);
         setErrorValue('');
         setUserName();
       })
       .catch(error => {
       setErrorValue(error.messege);
-    })
+    }).finally(()=>setIsLoading(false))
     }
 
     // Google Sign In Method 
@@ -107,7 +107,8 @@ const Firebase = () => {
             
             .catch(error => {
                 setErrorValue(error.messege);
-            }).finally(()=>setIsLoading(false))
+            })
+           .finally(() => setIsLoading(false))
     };
 
     //Githube Sign In method 
@@ -123,6 +124,7 @@ const Firebase = () => {
     //Log Out User
 
     const handleLogOut = () => {
+        setIsLoading(true)
         signOut(auth).then(() => {
             
         }).finally(() => 
@@ -156,7 +158,7 @@ const Firebase = () => {
                 setUser({})
             }
             setIsLoading(false)
-        })
+        });
         return ()=> unsubscribed;
     },[])
 
@@ -175,7 +177,8 @@ const Firebase = () => {
         errorvalue,
         user,
         isLoading,
-        services,doctors
+        services,
+        doctors
     }
    
 };

@@ -19,6 +19,7 @@ const Login = () => {
     } = useAuth();
 
     const location = useLocation();
+    
     const history = useHistory();
    
     const redirect_url = location.state?.from || '/';
@@ -26,7 +27,7 @@ const Login = () => {
     const handlegoogleLogIn = () => {
         handleGoogleSignIn()
             .then(result => {
-                setUser(result.user)
+                
                 history.push(redirect_url);
             })
     };

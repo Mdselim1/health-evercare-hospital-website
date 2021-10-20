@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import useAuth from '../../context/useAuth';
 import './ServiceDetails.css';
 
 

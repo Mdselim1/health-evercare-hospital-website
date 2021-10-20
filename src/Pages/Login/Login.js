@@ -28,7 +28,6 @@ const Login = () => {
     const handlegoogleLogIn = () => {
         handleGoogleSignIn()
             .then(result => {
-                
                 history.push(redirect_url);
             })
     };
@@ -37,7 +36,6 @@ const Login = () => {
     const handleGithubLogIn = () => {
         handleGithubeSignIn()
             .then(result => {
-           
             history.push(redirect_url);
         })
     };

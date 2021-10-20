@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../../context/useAuth';
@@ -10,23 +10,33 @@ const ServiceDetails = () => {
     
     
     const { serviceId } = useParams();
-    
-    const { services } = useAuth();
-    
-    let service = services.find(ser => {
 
-        return ser.id == serviceId;
-    });
+    const [services, setServices] = useState([]);
 
+    useEffect(() => {
+        fetch('https://mdselim1.github.io/jsonapi/services.json')
+            .then(res => res.json())
+            .then(val => setServices(val))
+            .catch(error => {
+            console.log(error.messege);
+        })
+    }, []);
 
-    const { img, title, data } = service;
+    const singleService = [];
+
+    for (const service of services) {
+        console.log(service.id);
+        if (service.id == serviceId) {
+            singleService.push(service)
+        }
+    };
 
     return (
         <Container>
             <div className="mx-auto py-5 px-3 service-details">
-            <img src={img} className="w-100 rounded-2" alt="" />
-            <h1 className="fs-1 fw-bold text-success my-3">{title}</h1>
-            <p className="fs-4 fw-bold text-primary">{data}</p>
+            <img src={singleService[0]?.img} className="w-100 rounded-2" alt="" />
+            <h1 className="fs-1 fw-bold text-success my-3">{singleService[0]?.title}</h1>
+            <p className="fs-4 fw-bold text-primary">{singleService[0]?.data}</p>
         </div>
         </Container>
     );

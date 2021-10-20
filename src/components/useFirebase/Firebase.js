@@ -42,12 +42,15 @@ const Firebase = () => {
        
         fetch('services.json')
             .then(res => res.json())
-            .then(service => setServices(service))
+            .then(service => {
+                setServices(service)
+               setIsLoading(false)
+            })
             .catch(error => {
             console.log(error.messege);
         })
        
-    }, []);
+    }, [services]);
 
 
 

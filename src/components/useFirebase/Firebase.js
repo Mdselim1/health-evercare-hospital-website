@@ -24,17 +24,24 @@ const Firebase = () => {
 
     // For Doctors Data Load 
     useEffect(() => {
-        fetch('./doctors.json')
+        fetch('doctors.json')
             .then(res => res.json())
             .then(doc => setDoctors(doc))
+            .catch(error => {
+                console.log(error.messege);
+            })
             
     },[])
         
     // For Service Data Load 
     useEffect(() => {
-        fetch('./services.json')
+       
+        fetch('services.json')
             .then(res => res.json())
             .then(service => setServices(service))
+            .catch(error => {
+            console.log(error.messege);
+        })
        
     }, []);
 
@@ -141,8 +148,10 @@ const Firebase = () => {
     // User name Changed 
 
     const setUserName = () => {
+        setIsLoading(true)
         updateProfile(auth.currentUser, { displayName: name })
-        .then(result=>{})
+            .then(result => { }).catch(error => console.log(error.messege))
+        .finally(()=>setIsLoading(false))
       }
 
 
